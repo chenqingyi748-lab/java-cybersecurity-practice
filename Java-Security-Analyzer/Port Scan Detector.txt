@@ -1,0 +1,46 @@
+package detectors;
+
+public class PortScanDetector {
+
+    public static void run() {
+
+        System.out.println("\n[Port Scan Detector]");
+
+        String[] connections = {
+                "192.168.1.10:80",
+                "192.168.1.10:22",
+                "192.168.1.10:21",
+                "192.168.1.10:443",
+                "10.0.0.5:80"
+        };
+
+        int i = 0;
+
+        while (i < connections.length) {
+
+            int colon = connections[i].indexOf(":");
+            String currentIP = connections[i].substring(0, colon);
+
+            int count = 0;
+            int j = 0;
+
+            while (j < connections.length) {
+
+                int colon2 = connections[j].indexOf(":");
+                String checkIP = connections[j].substring(0, colon2);
+
+                if (checkIP.equals(currentIP)) {
+                    count++;
+                }
+
+                j++;
+            }
+
+            if (count >= 3) {
+                System.out.println("Port scan detected from: " + currentIP);
+            }
+
+            i++;
+        }
+    }
+}
