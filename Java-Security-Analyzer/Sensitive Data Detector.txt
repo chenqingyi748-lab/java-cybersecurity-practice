@@ -1,0 +1,33 @@
+package detectors;
+
+public class SensitiveDataDetector {
+
+    public static void run() {
+
+        System.out.println("\n[Sensitive Data Detector]");
+
+        String[] data = {
+                "User email: admin@example.com",
+                "Password: 123456",
+                "API_KEY=ABCD1234",
+                "User login success",
+                "token=xyz987"
+        };
+
+        int i = 0;
+
+        while (i < data.length) {
+
+            String line = data[i].toLowerCase();
+
+            if (line.contains("password") ||
+                line.contains("api_key") ||
+                line.contains("token")) {
+
+                System.out.println("Sensitive data detected: " + data[i]);
+            }
+
+            i++;
+        }
+    }
+}
