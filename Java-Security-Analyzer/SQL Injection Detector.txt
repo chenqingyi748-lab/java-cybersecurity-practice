@@ -1,0 +1,34 @@
+package detectors;
+
+public class SqlInjectionDetector {
+
+    public static void run() {
+
+        System.out.println("\n[SQL Injection Detector]");
+
+        String[] inputs = {
+                "admin",
+                "123456",
+                "' OR '1'='1",
+                "normalUser",
+                "DROP TABLE users"
+        };
+
+        int i = 0;
+
+        while (i < inputs.length) {
+
+            String current = inputs[i];
+            String lower = current.toLowerCase();
+
+            if (lower.contains("' or") ||
+                lower.contains("drop table") ||
+                lower.contains("--")) {
+
+                System.out.println("SQL Injection detected: " + current);
+            }
+
+            i++;
+        }
+    }
+}
