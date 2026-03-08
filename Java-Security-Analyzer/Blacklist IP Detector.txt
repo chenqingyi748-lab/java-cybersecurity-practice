@@ -1,0 +1,41 @@
+package detectors;
+
+public class BlacklistIPDetector {
+
+    public static void run() {
+
+        System.out.println("\n[Blacklist IP Detector]");
+
+        String[] loginIPs = {
+                "192.168.1.10",
+                "45.33.32.156",
+                "10.0.0.5",
+                "203.0.113.50",
+                "45.33.32.156"
+        };
+
+        String[] blacklist = {
+                "45.33.32.156",
+                "203.0.113.50"
+        };
+
+        int i = 0;
+
+        while (i < loginIPs.length) {
+
+            int j = 0;
+
+            while (j < blacklist.length) {
+
+                if (loginIPs[i].equals(blacklist[j])) {
+                    System.out.println("Blacklisted IP detected: " + loginIPs[i]);
+                    break;
+                }
+
+                j++;
+            }
+
+            i++;
+        }
+    }
+}
