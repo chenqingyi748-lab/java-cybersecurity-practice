@@ -1,0 +1,48 @@
+package detectors;
+
+public class BruteForceDetector {
+
+    public static void run() {
+
+        System.out.println("\n[Brute Force Detector]");
+
+        String[] logs = {
+                "192.168.1.10 login failed",
+                "192.168.1.10 login failed",
+                "192.168.1.10 login failed",
+                "192.168.1.10 login success",
+                "10.0.0.5 login failed",
+                "10.0.0.5 login failed"
+        };
+
+        int i = 0;
+        int failCounter = 0;
+        String currentIP = "";
+
+        while (i < logs.length) {
+
+            String log = logs[i];
+
+            if (log.contains("failed")) {
+
+                String ip = log.substring(0, log.indexOf(" "));
+
+                if (ip.equals(currentIP)) {
+                    failCounter++;
+                } else {
+                    currentIP = ip;
+                    failCounter = 1;
+                }
+
+                if (failCounter == 3) {
+                    System.out.println("Brute force detected from: " + ip);
+                }
+
+            } else {
+                failCounter = 0;
+            }
+
+            i++;
+        }
+    }
+}
