@@ -1,0 +1,25 @@
+package securityscanner;
+
+public class UrlDetector {
+
+    public static void scan() {
+
+        String[] urls = {
+                "https://google.com",
+                "http://malicious.ru",
+                "http://phishing.cn"
+        };
+
+        int i = 0;
+
+        while (i < urls.length) {
+
+            if (urls[i].contains(".ru") || urls[i].contains(".cn")) {
+
+                System.out.println("Suspicious URL: " + urls[i]);
+            }
+
+            i++;
+        }
+    }
+}
