@@ -1,0 +1,37 @@
+package securityscanner;
+
+public class LoginAttackDetector {
+
+    public static void scan() {
+
+        String[] logs = {
+                "login failed",
+                "login failed",
+                "login failed",
+                "login success"
+        };
+
+        int i = 0;
+        int failCounter = 0;
+
+        while (i < logs.length) {
+
+            if (logs[i].equals("login failed")) {
+
+                failCounter++;
+
+                if (failCounter == 3) {
+                    System.out.println("Brute force attack detected!");
+                    break;
+                }
+
+            } else {
+
+                failCounter = 0;
+
+            }
+
+            i++;
+        }
+    }
+}
