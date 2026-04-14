@@ -27,7 +27,4 @@ Java 基礎
 - Brute force login detection
 - Port scan detection
 - Blacklisted IP detection
-- Sensitive data scanning
- 
- 
-  作者：Chen  
+- Sensitive data scanning  
