@@ -1,30 +1,29 @@
-Java Security Analyzer
+# Java Security Practice
 
-這是我學習 Java 與資安基礎的練習專案。
+This repository contains my Java learning exercises focused on cybersecurity concepts.
 
-## 學習內容
+## Topics Covered
 
-Java 基礎
-- if / else
-- while loop
-- Scanner
-- 字串比較
+Java Basics
+- if / while logic
+- arrays
+- algorithm practice
 
-資安概念
-- 密碼安全
-- 登入系統
-- 帳號鎖定
-- 暴力破解
+String Analysis
+- character analysis
+- password strength checking
 
-## 練習列表
-
-- PasswordChecker
-- LoginSystem
-- AccountLockSystem
-- SimpleEncryption
-- BruteForceSimulation  
+Security Detection
 - SQL Injection detection
+- Weak password detection
+- Suspicious URL detection
+- Sensitive data scanning
 - Brute force login detection
 - Port scan detection
-- Blacklisted IP detection
-- Sensitive data scanning  
+- Log analysis
+
+## Purpose
+
+This project is part of my self-learning journey in Java programming and cybersecurity.
+
+Author: Self-learning Java & Cybersecurity student
